@@ -1,0 +1,20 @@
+from tkinter import *
+from tkinter.ttk import *
+
+from time import strftime
+
+main_widget = Tk()
+main_widget.title("clock")
+
+
+def time():
+    string = strftime('%H:%M:%S %p')
+    label.config(text=string)
+    label.after(1000, time)
+
+
+label = Label(main_widget, font=('bold', 80), background="black", foreground="cyan")
+label.pack(anchor='center')
+time()
+
+mainloop()
